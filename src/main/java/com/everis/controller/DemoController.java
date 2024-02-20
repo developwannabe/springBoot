@@ -25,5 +25,10 @@ public class DemoController {
 	public String error_page() {
 		return "error";
 	}
-	 
+	
+	@GetMapping("/listarEmpleados")
+	public String listarEmp(Model model) {
+		model.addAttribute("listaEmp",empleadoService.listar());
+		return "listarDeEmpleados";
+	}
 }

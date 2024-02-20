@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Lista de empleados</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		Lista de empleados:
+		<table>
+			<th:block th:each="per : ${listaEmp}">
+				<tr>
+					<td th:text="${per.id}"></td>
+					<td th:text="${per.nombre}"></td>
+					<td th:text="${per.apellidos}"></td>
+				</tr>
+			</th:block>
+		</table>
+	</body>
+</html>
