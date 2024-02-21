@@ -34,4 +34,11 @@ public class EmpleadoServiceImpl implements EmpleadoService{
 	public List<Empleado> listarConJPA(Integer pID, String contiene){
 		return empleadoRepo.findByIdGreaterThanAndNombreLike(pID, contiene);
 	}
+	
+	@Override
+	public void inserta(Empleado emp) {
+		if(emp != null) {
+			empleadoRepo.save(emp);
+		}
+	}
 }

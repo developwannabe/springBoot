@@ -31,7 +31,6 @@ public class EmpleadoRepoImpl implements EmpleadoRepo{
 		Query query = entitymanager.createNativeQuery("SELECT * FROM empleado " +
 						"WHERE nombre LIKE ?", Empleado.class);
 		query.setParameter(1, "%" + texto_nombre + "%");
-		
 		return query.getResultList();
 	}
 	

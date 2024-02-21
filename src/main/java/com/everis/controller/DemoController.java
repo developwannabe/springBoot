@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.cache.annotation.Cacheable;
 
 import com.everis.service.EmpleadoService;
 
@@ -27,6 +28,7 @@ public class DemoController {
 	}
 	
 	@GetMapping("/listarEmpleados")
+	@Cacheable(value="empleados")
 	public String listarEmp(Model model) {
 		model.addAttribute("listaEmp",empleadoService.listar());
 		model.addAttribute("listaEmpConE", empleadoService.listarFiltroNombre("e"));
