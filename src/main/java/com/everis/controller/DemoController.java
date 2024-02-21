@@ -8,12 +8,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.cache.annotation.Cacheable;
 
 import com.everis.service.EmpleadoService;
+import com.everis.service.AsignaturaService;
 
 @Controller
 public class DemoController {
 	
 	@Autowired
 	EmpleadoService empleadoService;
+	
+	@Autowired
+	AsignaturaService asignaturaService;
 	
 	@GetMapping("/saludo")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="Mundo") String name, Model model) {
@@ -34,6 +38,13 @@ public class DemoController {
 		model.addAttribute("listaEmpConE", empleadoService.listarFiltroNombre("e"));
 		model.addAttribute("listaJPA", empleadoService.listarConJPA(2, "%o%"));
 		return "listarDeEmpleados";
+	}
+	
+	@GetMapping("/listarAsignaturas")
+	@Cacheable(value="asignaturas")
+	public String listarAsi(Model model) {
+		model.addAttribute("listaAsi",asignaturaService.listar());
+		return "listarDeAsignaturas";
 	}
 	
 }

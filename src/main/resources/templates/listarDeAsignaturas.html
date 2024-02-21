@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Lista de empleados</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		Lista de asignaturas:
+		<table>
+			<th:block th:each="asig : ${listaAsi}">
+				<tr>
+					<td th:text="${asig.id}"></td>
+					<td th:text="${asig.curso}"></td>
+					<td th:text="${asig.descripcion}"></td>
+					<td th:text="${asig.nombre}"></td>
+				</tr>
+			</th:block>
+		</table>
+	</body>
+</html>
