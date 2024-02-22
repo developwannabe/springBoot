@@ -48,9 +48,9 @@ public class EmpleadosRestController {
 		}
 	}*/
 	
-	@PostMapping
+	//@PostMapping
 	@CacheEvict(value="empleados",allEntries=true)
-	public ResponseEntity<Empleado> insertarEmpleado_v3 (@RequestBody Empleado empleado){
+	public ResponseEntity<Empleado> insertarEmpleado_v3 (@RequestBody Empleado empleado) throws Exception{
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			if (empleado.getId()!=null) {

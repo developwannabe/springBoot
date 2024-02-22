@@ -76,7 +76,7 @@ class EmpleadoServiceImplTest {
 	}
 
 	@Test
-	void testInserta() {
+	void testInserta() throws Exception{
 		assertEquals(2, service.listar().size(), "Hay dos empleados en BBDD");
 		
 		Empleado e3 = new Empleado();
