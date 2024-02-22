@@ -1,5 +1,7 @@
 package com.everis.repository.entity;
 
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,4 +29,17 @@ public class Empleado {
 	
 	@Column
 	private String apellidos;
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+		if(!(obj instanceof Empleado)) {
+			return false;
+		}
+		
+		Empleado otro = (Empleado) obj;
+		return Objects.equals(this.id, otro.id);
+	}
 }

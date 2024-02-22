@@ -1,3 +1,8 @@
+DELETE FROM EMPLEADO;
+DELETE FROM ASIGNATURA;
+DELETE FROM USUARIO;
+DELETE FROM ROL;
+
 insert into empleado (id, nombre, apellidos)
 select 1, 'Rocío', 'De la O' from dual where not exists (select 1 from empleado where id = 1);
 

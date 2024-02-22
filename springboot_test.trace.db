@@ -1,0 +1,9 @@
+2024-02-22 11:49:04.794994+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EMPLEADO" not found (this database is empty); SQL statement:
+insert into empleado (id, nombre, apellidos) select 1, 'Rocío', 'De la O' from dual where not exists (select 1 from empleado where id = 1) [42104-224]
+2024-02-22 11:56:33.047365+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EMPLEADO" not found (this database is empty); SQL statement:
+insert into empleado (id, nombre, apellidos) select 1, 'Rocío', 'De la O' from dual where not exists (select 1 from empleado where id = 1) [42104-224]
+2024-02-22 12:07:43.843257+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EMPLEADO" not found (this database is empty); SQL statement:
+DELETE FROM EMPLEADO [42104-224]
